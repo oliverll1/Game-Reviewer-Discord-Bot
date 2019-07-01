@@ -22,10 +22,12 @@
 
 ![Screenshot_3](https://user-images.githubusercontent.com/22094453/60408701-0733b000-9b8e-11e9-96ac-c1fd5cd43a4d.png)
 
-3. Then go to your console and run `node index.js`
-  
+3. Then go to your console and run the following commands: 
+   * `npm install`
+   * `node index.js`
+   
     You should see the message "Logged in!" in the console
-    
+
 4. If everything went well and your bot is in your server you should see it in your online section (right column) 
 with the tag BOT in its name 
 
