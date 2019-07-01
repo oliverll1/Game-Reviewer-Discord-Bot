@@ -15,8 +15,8 @@ class GameReviewCommand extends commando.Command {
 
     async run(message, args) {
       console.log(args);
-      const response = await fetch(`http://www.gamespot.com/api/reviews/?api_key=${GAMESPOTKEY}&format=json&filter=title:${args}`)
-      const json = response.json();  
+      let response = await fetch(`http://www.gamespot.com/api/reviews/?api_key=${GAMESPOTKEY}&format=json&filter=title:${args}`)
+      let json = await response.json();  
     
       console.log(json);
       if(json.number_of_total_results <= 0){
