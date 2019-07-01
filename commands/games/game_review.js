@@ -8,7 +8,7 @@ class GameReviewCommand extends commando.Command {
             name: 'review',
             group: 'games',
             memberName: 'review',
-            description: 'shows the review of a game'
+            description: 'Shows the review of a game ex: !review mario galaxy'
 
         })
     }
