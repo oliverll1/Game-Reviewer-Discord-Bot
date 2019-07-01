@@ -10,7 +10,7 @@ class CoinFlipCommand extends commando.Command{
         })
     }
 
-    async run (message, args){
+    run(message, args){
         let chance = Math.floor(Math.random() *2 );
 
         if(chance === 0){

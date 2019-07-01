@@ -14,25 +14,18 @@ class GameReviewCommand extends commando.Command {
     }
 
     async run(message, args) {
-        console.log(args);
-        fetch(`http://www.gamespot.com/api/reviews/?api_key=${GAMESPOTKEY}&format=json&filter=title:${args}`)
-            .then(function (response) {
-                return response.json();
-            })
-            .then(function (json) {
-                console.log(json);
-                if(json.number_of_total_results <= 0){
-                    message.reply("Sorry i don't know the game " + args);
-                }
-                else{
-                    message.reply(json.results[0].title + "\n" + json.results[0].deck + "\n\n" + 
-                    json.results[0].score + "\n" + "Read the full article on: " + json.results[0].site_detail_url);
-                }
-                
-            })
-            .catch(function(reason){
-                console.log(reason);
-            });
+      console.log(args);
+      const response = await fetch(`http://www.gamespot.com/api/reviews/?api_key=${GAMESPOTKEY}&format=json&filter=title:${args}`)
+      const json = response.json();  
+    
+      console.log(json);
+      if(json.number_of_total_results <= 0){
+          message.reply("Sorry i don't know the game " + args);
+      }
+      else{
+          message.reply(json.results[0].title + "\n" + json.results[0].deck + "\n\n" + 
+          json.results[0].score + "\n" + "Read the full article on: " + json.results[0].site_detail_url);
+      }
 
     }
 }
